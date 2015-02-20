@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>RotTops</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({D5DuLP:[function(t,n){function e(t,n){var e=r[t];return e?e.apply(this,n):(o[t]||(o[t]=[]),void o[t].push(n))}var r={},o={};n.exports=e,e.queues=o,e.handlers=r},{}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&p&&p.body){l.proto="https"===f.split(":")[0]||t.sslForHttp?"https://":"http://",i("mark",["onload",a()]);var n=p.createElement("script");n.src=l.proto+t.agent,p.body.appendChild(n)}}function r(){"complete"===p.readyState&&o()}function o(){i("mark",["domContent",a()])}function a(){return(new Date).getTime()}var i=t("handle"),u=window,p=u.document,s="addEventListener",c="attachEvent",f=(""+location).split("?")[0],l=n.exports={offset:a(),origin:f,features:[]};p[s]?(p[s]("DOMContentLoaded",o,!1),u[s]("load",e,!1)):(p[c]("onreadystatechange",r),u[c]("onload",e)),i("mark",["firstbyte",a()])},{handle:"D5DuLP"}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}]},{},["G9z0Bl"]);</script>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="robots" content="noindex,nofollow" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-title" content="Phaser App">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	<!-- Favicon -->
+	<!-- Opera Speed Dial Favicon -->
+  	<link rel="icon" type="image/png" href="icons/app_icon_152x152.png" />
+	<!-- Standard Favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<!-- To  many apple things... -->
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<!-- non-retina iPhone pre iOS 7 -->
+	<link rel="apple-touch-icon" sizes="57x57" href="icons/app_icon_57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="icons/app_icon_60x60.png">
+	<!-- non-retina iPad pre iOS 7 -->
+	<link rel="apple-touch-icon" sizes="72x72" href="icons/app_icon_72x72.png">
+	<!-- non-retina iPad iOS 7 -->
+	<link rel="apple-touch-icon" sizes="76x76" href="icons/app_icon_76x76.png">
+	<!-- retina iPhone pre iOS 7 -->
+	<link rel="apple-touch-icon" sizes="114x114" href="icons/app_icon_114x114.png">
+	<!-- retina iPhone iOS 7 -->
+	<link rel="apple-touch-icon" sizes="120x120" href="icons/app_icon_120x120.png">
+	<!-- retina iPad pre iOS 7 -->
+	<link rel="apple-touch-icon" sizes="144x144" href="icons/app_icon_144x144.png">
+	<!-- retina iPad iOS 7 -->
+	<link rel="apple-touch-icon" sizes="152x152" href="icons/app_icon_152x152.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/app_icon_256x256.png">
+
+
+
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+	<!-- Add font -->
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+
+	<!-- Javascript for game -->
+	<script type="text/javascript" src="js/phaser.min.js"></script>
+	<script type="text/javascript" src="js/virtualjoystick.js"></script>
+
+	<!-- Game states-->
+	<script type="text/javascript" src="src/Boot.js"></script>
+	<script type="text/javascript" src="src/Preloader.js"></script>
+	<script type="text/javascript" src="src/MainMenu.js"></script>
+	<script type="text/javascript" src="src/Game.js"></script>
+
+	<!-- Objects -->
+	<script type="text/javascript" src="src/objects/Drop.js"></script>
+	<script type="text/javascript" src="src/objects/Tops.js"></script>
+
+	<!-- Levels -->
+	<script type="text/javascript" src="src/levels/Level1.js"></script>
+	<script type="text/javascript" src="src/levels/Level2.js"></script>
+	<script type="text/javascript" src="src/levels/Level3.js"></script>
+	<script type="text/javascript" src="src/levels/Level4.js"></script>
+	<script type="text/javascript" src="src/levels/Level5.js"></script>
+	<script type="text/javascript" src="src/levels/Level6.js"></script>
+	<script type="text/javascript" src="src/levels/Level7.js"></script>
+</head>
+<body>
+
+	<div id="game"></div>
+	<div id="orientation"></div>
+
+<script type="text/javascript">
+
+(function () {
+	const SAFE_ZONE_WIDTH=1280;
+	const SAFE_ZONE_HEIGHT=720;
+	var game = new Phaser.Game( 1280, 720, Phaser.AUTO, 'game');
+
+	//	Add the States your game has.
+	//	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
+	game.state.add('Boot', RotTops.Boot);
+	game.state.add('Preloader', RotTops.Preloader);
+	game.state.add('MainMenu', RotTops.MainMenu);
+	game.state.add('Game', RotTops.Game);
+
+	game.state.add('Level1', RotTops.Game);
+	game.state.add('Level2', RotTops.Game);
+	game.state.add('Level3', RotTops.Game);
+	game.state.add('Level4', RotTops.Game);
+	game.state.add('Level5', RotTops.Game);
+	game.state.add('Level6', RotTops.Game);
+	game.state.add('Level7', RotTops.Game);
+
+	//	Now start the Boot state.
+	game.state.start('Boot');
+
+})();
+</script>
+
+</body>
+</html>
